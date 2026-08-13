@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests",
+    "group:allNonMajor",
+    ":disableDependencyDashboard"
+  ],
+  "schedule": ["before 9am on monday"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["composer"],
+      "matchDepTypes": ["require-dev"],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["dependencies", "require"],
+      "minimumReleaseAge": "14 days",
+      "automerge": true
+    }
+  ]
+}
