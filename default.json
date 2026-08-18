@@ -10,11 +10,13 @@
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
+      "minimumReleaseAge": "1 day",
       "automerge": true
     },
     {
       "matchManagers": ["composer"],
       "matchDepTypes": ["require-dev"],
+      "minimumReleaseAge": "1 day",
       "automerge": true
     },
     {
