@@ -7,22 +7,12 @@
     ":disableDependencyDashboard"
   ],
   "schedule": ["before 9am on monday"],
+  "minimumReleaseAge": "1 day",
+  "automerge": true,
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
-      "minimumReleaseAge": "1 day",
-      "automerge": true
-    },
-    {
-      "matchManagers": ["composer"],
-      "matchDepTypes": ["require-dev"],
-      "minimumReleaseAge": "1 day",
-      "automerge": true
-    },
-    {
       "matchDepTypes": ["dependencies", "require"],
-      "minimumReleaseAge": "14 days",
-      "automerge": true
+      "minimumReleaseAge": "14 days"
     }
   ]
 }
