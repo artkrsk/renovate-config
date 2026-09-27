@@ -13,6 +13,11 @@
     {
       "matchDepTypes": ["dependencies", "require"],
       "minimumReleaseAge": "14 days"
+    },
+    {
+      "description": "Reusable workflows are consumed from @main on purpose; a digest pin freezes a repo on an old revision and turns every workflow change into a per-repo PR",
+      "matchDepNames": ["artkrsk/wordpress-plugin-workflows"],
+      "pinDigests": false
     }
   ]
 }
