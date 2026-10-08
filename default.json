@@ -15,9 +15,19 @@
       "minimumReleaseAge": "14 days"
     },
     {
+      "description": "A pin changes nothing that could age: Renovate 42 treats a missing release timestamp as 'not old enough', so pin PRs otherwise sit on a pending stability check forever",
+      "matchUpdateTypes": ["pin", "pinDigest"],
+      "minimumReleaseAge": null
+    },
+    {
       "description": "Reusable workflows are consumed from @main on purpose; a digest pin freezes a repo on an old revision and turns every workflow change into a per-repo PR",
       "matchDepNames": ["artkrsk/wordpress-plugin-workflows"],
       "pinDigests": false
+    },
+    {
+      "description": "Every repo declaring phpunit/phpunit is on ^9.6 against wp-phpunit ~7.x and yoast/phpunit-polyfills ^4.0, which still call PHPUnit\\Util\\Test::parseTestMethodAnnotations(), removed in PHPUnit 11 — plus a MockObject method()/expects() signature break. horizontal-scroll-for-elementor#24 is the proof (52 failing integration tests). Cap below v11 fleet-wide until a coordinated bump (wp-phpunit + phpunit-polyfills + call-site fixes) ships as separate work.",
+      "matchPackageNames": ["phpunit/phpunit"],
+      "allowedVersions": "<11"
     }
   ]
 }
